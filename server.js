@@ -63,15 +63,15 @@ app.post("/expense", (request, response) => {
   );
 });
 app.get("/expenses", (request, response) => {
-  expenses.find({trip: request.body.trip}).toArray((error, items) => {
-    if(error) {
-      console.error(error)
-      response.status(500).json({error: error})
-      return
+  expenses.find({ trip: request.body.trip }).toArray((error, items) => {
+    if (error) {
+      console.error(error);
+      response.status(500).json({ error: error });
+      return;
     }
 
-    response.status(200).json({trips: items})
-  })
+    response.status(200).json({ trips: items });
+  });
 });
 
 // Start the server
